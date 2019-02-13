@@ -1,6 +1,9 @@
 window.addEventListener('load', () => {
     document.getElementById('create').addEventListener('click', () => {
-        let regExp = new RegExp('a+');
-        alert(regExp.test(document.getElementById('firstName').value));
+        let email = document.getElementById('email').value;
+
+        if (!/^[^@]+@[^@]+$/.test(email) && !/^\S*$/.test(email)) {
+            document.getElementById('emailError').style.opacity = 1;
+        }
     });
 });
