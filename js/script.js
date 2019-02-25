@@ -1,9 +1,63 @@
 window.addEventListener('load', () => {
     document.getElementById('create').addEventListener('click', () => {
-        let email = document.getElementById('email').value;
-
-        if (!/^[^@]+@[^@]+$/.test(email) && !/^\S*$/.test(email)) {
-            document.getElementById('emailError').style.opacity = 1;
-        }
+        validateFirstName();
+        validateLastName();
+        validateUsername();
+        validateEmail();
+        validateConfirmEmail();
+        vaildatePhoneNumber();
+        validateBirthday();
+        validateGender();
+        validatePassword();
+        validateConfirmPassword();
+        validateAgree();
     });
 });
+
+function validateFirstName() {
+    let firstName = document.getElementById('firstName');
+
+    if (!/[a-zäöüß]/i.test(firstName)) {
+        alert('FOISCHA NAME DU SCHEIß HURENSOHN!!!!111');
+    }
+}
+
+function validateLastName() {
+
+}
+
+function validateUsername() {
+
+}
+
+function validateEmail() {
+    
+}
+
+function validateConfirmEmail() {
+    
+}
+
+function vaildatePhoneNumber() {
+    
+}
+
+function validateBirthday() {
+    
+}
+
+function validateGender() {
+    
+}
+
+function validatePassword() {
+    
+}
+
+function validateConfirmPassword() {
+    
+}
+
+function validateAgree() {
+    
+}
