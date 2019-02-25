@@ -9,31 +9,67 @@
     <script src="./js/script.js"></script>
 </head>
 <body>
-    <form>
+    <form id="form1" style="opacity: 1;">
+        <p id="firstNameError" style="opacity: 0;">Please enter your real name.</p>
         <input id="firstName" type="text" placeholder="First name">
+
+        <p id="lastNameError" style="opacity: 0;">Please enter your real name.</p>
         <input id="lastName" type="text>" placeholder="Last name">
+
+        <p id="usernameError" style="opacity: 0;">You can only use letters, numbers, dots and underscores.</p>
         <input id="username" type="text" placeholder="Username">
-        <p id="emailError" style="opacity: 0;">EMAIL FOISCH OIDA</p>
-        <input id="email" type="text" placeholder="Email">
+
+        <p id="emailError" style="opacity: 0;">Please enter a valid email.</p>
+        <input id="email" type="email" placeholder="Email">
+
+        <p id="confirmEmailError" style="opacity: 0;">Please enter the same email again.</p>
         <input id="confirmEmail" type="email" placeholder="Confirm email">
+
+        <input type="button" name="next" value="Next">
+    </form>
+
+    <form id="form2" style="opacity: 0;">
+        <p id="phoneNumberError" style="opacity: 0;">Please enter a valid phone number.</p>
         <input id="phoneNumber" type="tel" placeholder="Phone number">
+
+        <p id="birthdayError" style="opacity: 0;">You must be 16 years or older to use our services.</p>
         <p>Birthday</p>
-        <input name="birthday" type="date">
+        <input id="birthday" type="date">
+
+        <p id="genderError" style="opacity: 0;">Please tick one of the options.</p>
         <input name="gender" type="radio">
         <p>Male</p>
         <input name="gender" type="radio">
         <p>Female</p>
         <input name="gender" type="radio">
         <p>Other</p>
+
+        <input type="button" name="back" value="Back">
+        <input type="button" name="next" value="Next">
+    </form>
+
+    <form id="form3" style="opacity: 0;">
+        <p id="passwordError" style="opacity: 0;">Your password has to be 8 or more digits long and must contain at least one lower-case letter, one upper-case letter, one number and one symbol.</p>
         <input id="password" type="password" placeholder="Password">
+
+        <p id="confirmPasswordError" style="opacity: 0;">Please enter the same password again.</p>
         <input id="confirmPassword" type="password" placeholder="Confirm password">
+
+        <p id="agreeError" style="opacity: 0;">You must agree the Terms of Service and Privacy Policy to use our services.</p>
         <input id="agree" type="checkbox">
         <p>I agree the</p>
         <a href="./sub/tos.html">Terms of Service</a>
         <p>and</p>
         <a href="./sub/pp.html">Privacy Policy</a>
         <p>.</p>
-        <input id="create" type="submit" value="Create account">
+
+        <input type="button" name="back" value="Back">
+        <input type="button" id="create" value="Create account">
     </form>
+
+    <div id="thankYou" style="opacity: 0;">
+        <h1>Thank you for creating an account</h1>
+        <p>You're almost done! We have sent you a verification email. Once you click the link, you'll be able to use our services.</p>
+    </div>
 </body>
 </html>
