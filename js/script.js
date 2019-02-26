@@ -1,13 +1,43 @@
 let errors = [];
 
 window.addEventListener('load', () => {
+    document.getElementById('form1').style.display = 'block';
+
+    for (let error of document.getElementsByClassName('error')) {
+        error.style.opacity = 0;
+    }
+
+    for (let border of document.getElementsByClassName('inputBorder')) {
+        border.style.backgroundColor = 'lightgray';
+    }
+
     for (let input of document.getElementsByTagName('input')) {
         if (input.type !== 'button') {
-            input.style.borderColor = 'black';
+            if (input.type !== 'radio' && input.type !== 'checkbox' && input.type !== 'date') {
+                input.addEventListener('focus', () => {
+                    let text = document.getElementById(`${input.id}Text`).style;
+
+                    text.fontSize = '8pt';
+                    text.top = '0';
+
+                    document.getElementById(`${input.id}Border`).style.backgroundColor = 'rgb(0, 191, 255)';
+                });
+
+                input.addEventListener('blur', () => {
+                    if (input.value === '') {
+                        let text = document.getElementById(`${input.id}Text`).style;
+
+                        text.fontSize = '12pt';
+                        text.top = '1.25vw';
+                    }
+
+                    document.getElementById(`${input.id}Border`).style.backgroundColor = 'lightgray';
+                });
+            }
 
             input.addEventListener('click', () => {
-                if (input.type !== 'radio' && input.type !== 'checkbox') {
-                    input.style.borderColor = 'black';
+                if (input.type === 'date') {
+                    input.style.boxShadow = 'none';
                 }
 
                 if (input.type !== 'radio') {
@@ -19,11 +49,11 @@ window.addEventListener('load', () => {
         }
     }
 
-    for (let button of document.getElementsByName('next')) {
+    for (let button of document.getElementsByClassName('next')) {
         button.addEventListener('click', next);
     }
 
-    for (let button of document.getElementsByName('back')) {
+    for (let button of document.getElementsByClassName('back')) {
         button.addEventListener('click', back);
     }
 
@@ -33,8 +63,12 @@ window.addEventListener('load', () => {
         validateAgree();
 
         if (validatePassword() && validateConfirmPassword() && validateAgree()) {
-            document.getElementById('form3').style.opacity = 0;
-            document.getElementById('thankYou').style.opacity = 1;
+            let thankYou = document.getElementById('thankYou');
+
+            document.getElementById('wrapper').style.display = 'none';
+            thankYou.style.display = 'block';
+
+            thankYou.style.marginTop = (innerHeight - thankYou.offsetHeight) / 2 + 'px';
         } else {
             printErrors();
         }
@@ -46,7 +80,7 @@ function next() {
     let form2 = document.getElementById('form2').style;
     let form3 = document.getElementById('form3').style;
 
-    if (form1.opacity === '1') {
+    if (form1.display === 'block') {
         validateFirstName();
         validateLastName();
         validateUsername();
@@ -54,8 +88,8 @@ function next() {
         validateConfirmEmail();
 
         if (validateFirstName() && validateLastName() && validateUsername() && validateEmail() && validateConfirmEmail()) {
-            form1.opacity = 0;
-            form2.opacity = 1;
+            form1.display = 'none';
+            form2.display = 'block';
         } else {
             printErrors();
         }
@@ -65,8 +99,8 @@ function next() {
         validateGender();
 
         if (vaildatePhoneNumber() && validateBirthday() && validateGender()) {
-            form2.opacity = 0;
-            form3.opacity = 1;
+            form2.display = 'none';
+            form3.display = 'block';
         } else {
             printErrors();
         }
@@ -78,12 +112,12 @@ function back() {
     let form2 = document.getElementById('form2').style;
     let form3 = document.getElementById('form3').style;
 
-    if (form2.opacity === '1') {
-        form2.opacity = 0;
-        form1.opacity = 1;
+    if (form2.display === 'block') {
+        form2.display = 'none';
+        form1.display = 'block';
     } else {
-        form3.opacity = 0;
-        form2.opacity = 1;
+        form3.display = 'none';
+        form2.display = 'block';
     }
 }
 
@@ -231,7 +265,13 @@ function printErrors() {
         document.getElementById(`${error.name}Error`).style.opacity = 1;
 
         if (error.hasBorder) {
-            document.getElementById(error.name).style.borderColor = 'red';
+            let input = document.getElementById(error.name);
+
+            if (input.type !== 'date') {
+                document.getElementById(`${error.name}Border`).style.backgroundColor = 'red';
+            } else {
+                input.style.boxShadow = '0 0 3px 1px red';
+            }
         }
     }
 

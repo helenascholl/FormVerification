@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+#wrapper {
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+    width: 30vw;
+}
+h1 {
+    text-align: center;
+}
+input {
+    height: 1.5vw;
+    width: 30vw;
+    outline: none;
+    border: none;
+    display: block;
+}
+input[type=date] {
+    margin-top: 1vw;
+    margin-bottom: 1.5vw;
+    width: 10vw;
+    display: inline-block;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    transform: border 200ms;
+    padding-left: 0.5vw;
+}
+input[type=date]:focus {
+    border: 1px solid rgb(0, 191, 255);
+}
+input[type=button] {
+    border-radius: 5px;
+    color: white;
+    width: 5vw;
+    background-color: rgb(81, 81, 255);
+    transition: background-color 200ms;
+    position: relative;
+    top: 0;
+    margin-top: 2vw;
+    display: inline-block;
+}
+.buttonWrapper {
+    margin-top: 2vw;
+}
+.buttonWrapper .next {
+    left: 20vw;
+}
+input[type=checkbox] {
+    display: inline-block;
+    width: 1vw;
+}
+.next {
+    left: 25vw;
+}
+.back {
+    left: 0;
+}
+#create {
+    width: 8vw;
+    left: 17vw;
+}
+input[type=button]:hover {
+    background-color: rgb(52, 52, 255);
+}
+input[type=radio] {
+    width: 1vw;
+    margin: 0;
+    margin-right: 1vw;
+    display: inline-block;
+}
+form {
+    position: absolute;
+}
+.error {
+    color: red;
+    transition: opacity 200ms;
+}
+span {
+    position: relative;
+    left: 0;
+    transition: font-size 200ms, top 200ms;
+    pointer-events: none;
+}
+.inputBorder {
+    width: 30vw;
+    height: 1px;
+    margin-bottom: 2vw;
+    transition: background-color 500ms;
+}
+input:focus + .inputBorder {
+    background-color: rgb(0, 191, 255);
+}
+p {
+    margin: 0;
+}
+#agreeWrapper p, #agreeWrapper a {
+    display: inline;
+    margin-left: 4px;
+}
+#agreeWrapper a {
+    text-decoration: none;
+    color: rgb(52, 52, 255);
+}
+#agreeWrapper {
+    display: flex;
+    align-items: center;
+}
+#birthdayText {
+    display: inline;
+    margin-right: 1vw;
+}
+.radioWrapper {
+    display: flex;
+    align-items: center;
+}
+#genderText {
+    margin-top: 0.5vw;
+    margin-right: 1vw;
+    display: inline-block;
+    vertical-align: top;
+}
+#radioButtons {
+    margin-top: 0.5vw;
+    display: inline-block;
+}
+#thankYou {
+    width: 50vw;
+    margin: auto;
+    text-align: center;
+}

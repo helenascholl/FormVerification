@@ -5,70 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Formularüberprüfung</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css" />
+    <link rel="icon" href="./img/index.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="./js/script.js"></script>
 </head>
 <body>
-    <form id="form1" style="opacity: 1;">
-        <p id="firstNameError" style="opacity: 0;">Please enter your real name.</p>
-        <input id="firstName" type="text" placeholder="First name">
+    <div id="wrapper">
+        <h1>Create an account</h1>
+        <form id="form1" style="display: none;">
+            <p class="error" id="firstNameError">Please enter your real name.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="firstNameText">First name</span>
+            <input id="firstName" type="text">
+            <div id="firstNameBorder" class="inputBorder"></div>
 
-        <p id="lastNameError" style="opacity: 0;">Please enter your real name.</p>
-        <input id="lastName" type="text>" placeholder="Last name">
+            <p class="error" id="lastNameError">Please enter your real name.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="lastNameText">Last name</span>
+            <input id="lastName" type="text>">
+            <div id="lastNameBorder" class="inputBorder"></div>
 
-        <p id="usernameError" style="opacity: 0;">You can only use letters, numbers, dots and underscores.</p>
-        <input id="username" type="text" placeholder="Username">
+            <p class="error" id="usernameError">You can only use letters, numbers, dots and underscores.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="usernameText">Username</span>
+            <input id="username" type="text">
+            <div id="usernameBorder" class="inputBorder"></div>
 
-        <p id="emailError" style="opacity: 0;">Please enter a valid email.</p>
-        <input id="email" type="email" placeholder="Email">
+            <p class="error" id="emailError">Please enter a valid email.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="emailText">Email</span>
+            <input id="email" type="email">
+            <div id="emailBorder" class="inputBorder"></div>
 
-        <p id="confirmEmailError" style="opacity: 0;">Please enter the same email again.</p>
-        <input id="confirmEmail" type="email" placeholder="Confirm email">
+            <p class="error" id="confirmEmailError">Please enter the same email again.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="confirmEmailText">Confirm email</span>
+            <input id="confirmEmail" type="email">
+            <div id="confirmEmailBorder" class="inputBorder"></div>
 
-        <input type="button" name="next" value="Next">
-    </form>
+            <input type="button" class="next" value="Next">
+        </form>
 
-    <form id="form2" style="opacity: 0;">
-        <p id="phoneNumberError" style="opacity: 0;">Please enter a valid phone number.</p>
-        <input id="phoneNumber" type="tel" placeholder="Phone number">
+        <form id="form2" style="display: none;">
+            <p class="error" id="phoneNumberError">Please enter a valid phone number.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="phoneNumberText">Phone number</span>
+            <input id="phoneNumber" type="tel">
+            <div id="phoneNumberBorder" class="inputBorder"></div>
 
-        <p id="birthdayError" style="opacity: 0;">You must be 16 years or older to use our services.</p>
-        <p>Birthday</p>
-        <input id="birthday" type="date">
+            <p class="error" id="birthdayError">You must be 16 years or older to use our services.</p>
+            <p id="birthdayText">Birthday:</p>
+            <input id="birthday" type="date">
 
-        <p id="genderError" style="opacity: 0;">Please tick one of the options.</p>
-        <input name="gender" type="radio">
-        <p>Male</p>
-        <input name="gender" type="radio">
-        <p>Female</p>
-        <input name="gender" type="radio">
-        <p>Other</p>
+            <p class="error" id="genderError">Please tick one of the options.</p>
+            <p id="genderText">Gender:</p>
+            <div id="radioButtons">
+                <div class="radioWrapper">
+                    <input name="gender" type="radio">
+                    <p>Male</p>
+                </div>
+                <div class="radioWrapper">
+                    <input name="gender" type="radio">
+                    <p>Female</p>
+                </div>
+                <div class="radioWrapper">
+                    <input name="gender" type="radio">
+                    <p>Other</p>
+                </div>
+            </div>
 
-        <input type="button" name="back" value="Back">
-        <input type="button" name="next" value="Next">
-    </form>
+            <div class="buttonWrapper">
+                <input type="button" class="back" value="Back">
+                <input type="button" class="next" value="Next">
+            </div>
+        </form>
 
-    <form id="form3" style="opacity: 0;">
-        <p id="passwordError" style="opacity: 0;">Your password has to be 8 or more digits long and must contain at least one lower-case letter, one upper-case letter, one number and one symbol.</p>
-        <input id="password" type="password" placeholder="Password">
+        <form id="form3" style="display: none;">
+            <p class="error" id="passwordError">Your password has to be 8 or more digits long and must contain at least one<br>lower-case letter, one upper-case letter, one number and one symbol.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="passwordText">Password</span>
+            <input id="password" type="password">
+            <div id="passwordBorder" class="inputBorder"></div>
 
-        <p id="confirmPasswordError" style="opacity: 0;">Please enter the same password again.</p>
-        <input id="confirmPassword" type="password" placeholder="Confirm password">
+            <p class="error" id="confirmPasswordError">Please enter the same password again.</p>
+            <span style="font-size: 12pt; top: 1.25vw;" id="confirmPasswordText">Confirm Password</span>
+            <input id="confirmPassword" type="password">
+            <div id="confirmPasswordBorder" class="inputBorder"></div>
 
-        <p id="agreeError" style="opacity: 0;">You must agree the Terms of Service and Privacy Policy to use our services.</p>
-        <input id="agree" type="checkbox">
-        <p>I agree the</p>
-        <a href="./sub/tos.html">Terms of Service</a>
-        <p>and</p>
-        <a href="./sub/pp.html">Privacy Policy</a>
-        <p>.</p>
+            <p class="error" id="agreeError">You must agree the Terms of Service and Privacy Policy to use our services.</p>
+            <div id="agreeWrapper">
+                <input id="agree" type="checkbox">
+                <p>I agree the</p>
+                <a href="./TermsOfService/" target="_blank">Terms of Service</a>
+                <p>and</p>
+                <a href="./PrivacyPolicy/" target="_blank">Privacy Policy</a>
+                <p>.</p>
+            </div>
 
-        <input type="button" name="back" value="Back">
-        <input type="button" id="create" value="Create account">
-    </form>
+            <div class="buttonWrapper">
+                <input type="button" class="back" value="Back">
+                <input type="button" id="create" value="Create account">
+            </div>
+        </form>
+    </div>
 
-    <div id="thankYou" style="opacity: 0;">
-        <h1>Thank you for creating an account</h1>
+    <div id="thankYou" style="display: none;">
+        <h1>Thank you for creating an account!</h1>
         <p>You're almost done! We have sent you a verification email. Once you click the link, you'll be able to use our services.</p>
     </div>
 </body>
