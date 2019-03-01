@@ -184,7 +184,7 @@ function validateConfirmEmail() {
 
 function vaildatePhoneNumber() {
     let phoneNumber = document.getElementById('phoneNumber');
-    let isValid = !/[^0-9/ ]/.test(phoneNumber.value) && phoneNumber.value.length > 4;
+    let isValid = !/[^0-9\/\+ ]/.test(phoneNumber.value) && phoneNumber.value.length > 4;
 
     if (!isValid) {
         errors.push({ name: 'phoneNumber', hasBorder: true });
