@@ -160,7 +160,7 @@ function validateUsername() {
 function validateEmail() {
     let email = document.getElementById('email');
     let splitEmail = email.value.split('@');
-    let isValid = splitEmail.length === 2 && splitEmail[1].split('.').length === 2 && splitEmail[1].split('.')[1].length > 2;
+    let isValid = splitEmail.length === 2 && splitEmail[1].split('.').length === 2 && splitEmail[1].split('.')[1].length >= 2;
 
     if (!isValid) {
         errors.push({ name: 'email', hasBorder: true });
